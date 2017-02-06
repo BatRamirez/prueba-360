@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../app/config/Config.php';
+
+use Symfony\Component\Translation\Loader\YamlFileLoader;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Base\Command\DeployCommand;
+
+ini_set('memory_limit', '-1');
+set_time_limit(0);
+$console = new Application('Lumen-Silex CLI');
+$app     = new \Silex\Application();
+
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../src/views',
+    'twig.options'    => array('cache' => __DIR__ . '/../app/cache/twig'),
+));
+
+$cache = new \Base\Command\CacheClearCommand('cache:clear', $console, $app);
+$cache->init();
+
+$deploy = new DeployCommand('project:deploy', $console);
+$deploy->init();
+
+$console->run();
