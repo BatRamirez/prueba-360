@@ -1,0 +1,378 @@
+@charset "UTF-8";
+* {
+    @include create('box-sizing', border-box);
+    color: #414141;
+    font-family: $samsung-sans-regular;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:visited,
+    &:link {
+        text-decoration: none;
+    }
+}
+
+//HEADER
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: #FFF;
+    text-align: center;
+    padding: 17px 20px 18px;
+    z-index: 5;
+}
+
+.header__logo {
+    max-width: 144px;
+    width: 100%;
+}
+
+.header__ham--menu {
+    width: 35px;
+    height: 24px;
+    position: relative;
+    float: right;
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    span {
+        height: 4px;
+        position: absolute;
+        width: 35px;
+        background: #A5A5A5;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 25px;
+        left: 0;
+        @include create(transition, 0.5s);
+        &::before,
+        &::after {
+            content: '';
+            height: 4px;
+            position: absolute;
+            width: 24px;
+            background: #A5A5A5;
+            border-radius: 25px;
+            right: 0;
+            @include create(transition, 0.5s);
+            @include create(transform-origin, right);
+        }
+        &::before {
+            top: -8px;
+        }
+        &::after {
+            bottom: -8px;
+        }
+    }
+}
+
+.close--menu {
+    span {
+        background: transparent;
+        &::before {
+            @include create(transform, rotate(-41deg));
+        }
+        &::after {
+            @include create(transform, rotate(42deg));
+        }
+    }
+}
+
+.header__menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #FFF;
+    top: 60px;
+    display: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    ul,
+    li {
+        list-style: none;
+    }
+    li {
+        width: 25%;
+        float: left;
+        height: 35px;
+        border: 1px solid #F0F0F0;
+        @include create(transition, 0.5s);
+    }
+    a {
+        font-family: $samsung-arabic-600;
+        font-size: 12px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 9px 0;
+        color: #000;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: #000;
+            outline: 0;
+        }
+        span {
+            display: block;
+            font-family: $samsung-arabic-600;
+            font-size: 12px;
+
+        }
+        &.no-padding {
+            padding: 0;
+        }
+    }
+    .active {
+      background: #F0F0F0;
+    }
+}
+
+//FOOTER
+
+.footer__col {
+    background: #ECECEC;
+    padding: 20px 0;
+    margin-bottom: 1px;
+    max-height: 62px;
+    a {
+        font-size: 20px;
+        color: #000;
+        font-family: $samsung-sans-med;
+        display: block;
+    }
+}
+
+.footer__social {
+    padding: 25px 0 19px;
+    a {
+        display: inline-block;
+        margin-right: 8px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    img {
+        width: 52px
+    }
+}
+
+.footer__logo {
+    padding: 26px 0px;
+    background: #636363;
+    img {
+        max-width: 180px;
+    }
+}
+
+//SITE
+
+.global__wrap {
+    padding-top: 60px;
+    overflow-x: hidden;
+}
+
+.quamtum__dot {
+    padding-top: 31px;
+    position: relative;
+    padding-bottom: 15px;
+    &::after {
+        content: '';
+        position: absolute;
+        -webkit-clip-path: polygon(0 0, 0 23%, 100% 0);
+        clip-path: polygon(0 0, 0 23%, 100% 0);
+        background: #FFF;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        bottom: -199px;
+    }
+}
+
+.sec__title {
+    font-family: $samsung-sans-bold;
+    font-size: 34px;
+    margin-bottom: 9px;
+    span {
+        font-size: 16px;
+        font-family: $samsung-black;
+        display: block;
+    }
+}
+
+.sec__description {
+    font-family: $samsung-sans-med;
+    font-size: 16px;
+    margin-bottom: 19px;
+}
+
+.sec__product {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.quamtum__dot--img {
+    max-width: 336px;
+}
+
+.rgb__sec {
+    background: #F5F5F5;
+    padding-top: 64px;
+    padding-bottom: 37px;
+}
+
+.rgb--img {
+    max-width: 336px;
+}
+
+.hdr__sec {
+    @extend .quamtum__dot;
+}
+
+.hdr__img {
+    max-width: 329px;
+}
+
+.uhd__sec {
+    @extend .rgb__sec;
+    background: #2B2929;
+    .sec__description,
+    .sec__title {
+        color: #FFF;
+        span {
+            color: #FFF;
+        }
+    }
+}
+
+.uhd__custom--img {
+    max-width: 360px;
+    display: block;
+    margin: 0 auto 23px;
+}
+
+.one__remote--sec {
+    position: relative;
+    padding-top: 130px;
+    &::after {
+        content: '';
+        position: absolute;
+        -webkit-clip-path: polygon(0 0, 0 23%, 100% 0);
+        clip-path: polygon(0 0, 0 23%, 100% 0);
+        background: #FFF;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        bottom: -200px;
+    }
+    .sec__title {
+        span {
+            font-size: 24px;
+        }
+    }
+}
+
+.oneremote--sites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 321px;
+    z-index: -1;
+}
+
+.oneremote--hand {
+    max-width: 371px;
+    display: block;
+    margin-left: 17px;
+}
+
+.custom__container {
+    margin-top: -105px;
+}
+
+.custom__title {
+    font-size: 24px;
+    span {
+        margin-top: 64px;
+    }
+}
+
+.smart__view {
+    @extend .rgb__sec;
+    .smart__custom--title {
+        width: 150px;
+        margin: 0 auto 14px;
+        span {
+            font-size: 24px;
+        }
+    }
+}
+
+.smart__view--img {
+    max-width: 65px;
+    margin: 0 auto 19px;
+    display: block;
+}
+
+.curved__sec {
+    @extend .quamtum__dot;
+    padding-bottom: 0;
+    .curved__title {
+        span {
+            font-size: 24px;
+        }
+    }
+}
+
+.curved--img {
+    max-width: 344px;
+    margin-bottom: 10px;
+}
+
+.curved--img__second {
+    max-width: 339px;
+}
+
+.rotate__sec {
+    @extend .rgb__sec;
+}
+
+.product {
+    img {
+        width: 100%;
+    }
+}
+
+//ROTATE
+
+.product1 {
+    width: 100% !important;
+    min-height: 265px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.img__rotate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 64px;
+  width: 78px;
+}

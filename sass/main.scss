@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@import "compass/utilities/general/clearfix";
+@import
+	"partials/mixins",
+  "partials/variables",
+	"partials/fonts",
+	"partials/bootstrap",
+  "partials/boilerplate",
+
+	//Plugins
+	"partials/threesixty",
+  	//Custom
+	"partials/xs"
+;
+
+
+// * ==============================================
+// * Nombre de seccion general
+// * ==============================================
+
+// * -------------------------
+// * Widget
+// * -------------------------

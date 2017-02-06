@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+$roboto: 'Roboto', sans-serif;
+
+
+
+@font-face {
+	font-family: 'Samsung InterFace black';
+	src: url('../fonts/SamsungInterFace-Black.eot');
+	src: url('../fonts/SamsungInterFace-Black.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungInterFace-Black.woff2') format('woff2'),
+		url('../fonts/SamsungInterFace-Black.woff') format('woff'),
+		url('../fonts/SamsungInterFace-Black.ttf') format('truetype'),
+		url('../fonts/SamsungInterFace-Black.svg#SamsungInterFace-Black') format('svg');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Samsung Sharp Sans regular';
+	src: url('../fonts/SamsungSharpSans-Regular.eot');
+	src: url('../fonts/SamsungSharpSans-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungSharpSans-Regular.woff2') format('woff2'),
+		url('../fonts/SamsungSharpSans-Regular.woff') format('woff'),
+		url('../fonts/SamsungSharpSans-Regular.ttf') format('truetype'),
+		url('../fonts/SamsungSharpSans-Regular.svg#SamsungSharpSans-Regular') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SamsungOneArabic600';
+	src: url('../fonts/SamsungOneArabic-600.eot');
+	src: url('../fonts/SamsungOneArabic-600.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungOneArabic-600.woff2') format('woff2'),
+		url('../fonts/SamsungOneArabic-600.woff') format('woff'),
+		url('../fonts/SamsungOneArabic-600.ttf') format('truetype'),
+		url('../fonts/SamsungOneArabic-600.svg#SamsungOneArabic-600') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Samsung Sharp Sans bold';
+	src: url('../fonts/SamsungSharpSans-Bold.eot');
+	src: url('../fonts/SamsungSharpSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungSharpSans-Bold.woff2') format('woff2'),
+		url('../fonts/SamsungSharpSans-Bold.woff') format('woff'),
+		url('../fonts/SamsungSharpSans-Bold.ttf') format('truetype'),
+		url('../fonts/SamsungSharpSans-Bold.svg#SamsungSharpSans-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Samsung Sharp Sans med';
+	src: url('../fonts/SamsungSharpSans-Medium.eot');
+	src: url('../fonts/SamsungSharpSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungSharpSans-Medium.woff2') format('woff2'),
+		url('../fonts/SamsungSharpSans-Medium.woff') format('woff'),
+		url('../fonts/SamsungSharpSans-Medium.ttf') format('truetype'),
+		url('../fonts/SamsungSharpSans-Medium.svg#SamsungSharpSans-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SamsungOneArabic400';
+	src: url('../fonts/SamsungOneArabic-400.eot');
+	src: url('../fonts/SamsungOneArabic-400.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SamsungOneArabic-400.woff2') format('woff2'),
+		url('../fonts/SamsungOneArabic-400.woff') format('woff'),
+		url('../fonts/SamsungOneArabic-400.ttf') format('truetype'),
+		url('../fonts/SamsungOneArabic-400.svg#SamsungOneArabic-400') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$samsung-black: 'Samsung InterFace black';
+$samsung-sans-regular: 'Samsung Sharp Sans regular';
+$samsung-arabic-600: 'SamsungOneArabic600';
+$samsung-sans-bold: 'Samsung Sharp Sans bold';
+$samsung-sans-med: 'Samsung Sharp Sans med';
+$samsung-arabic-400: 'SamsungOneArabic400';
