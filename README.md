@@ -1,1 +1,2 @@
-Npm i
+npm i
+composer install
