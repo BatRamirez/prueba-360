@@ -1,0 +1,10 @@
+deploy:
+  production:
+    rsync_options: '-azC --force --delete --progress -h --checksum'
+    host: democasapacifico.lapreca.com
+    dir: /symfony_projects/CasaPacifico
+    user: casapacifico
+    port: 22123
+    timeout: 0 # Connection timeout in seconds. 0 for no timeout.
+    post_deploy_operations:
+        - php app/console.php cache:clear

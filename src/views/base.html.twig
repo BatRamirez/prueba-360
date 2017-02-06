@@ -1,0 +1,121 @@
+{% set title_config = "Titulo" %}
+{% set description = "Descripcion del sitio" %}
+{% set url = "http://urldelsitio.com/" %}
+{% set locale = "es_CR" %}{# localizacion #}
+
+<!doctype html>
+<html class="no-js" lang="{{ app.request.locale|split('_')[0] }}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="{{ description }}" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!--  -->
+    <meta content="#286577" name="apple-mobile-web-app-status-bar-style">
+    <meta content="#286577" name="theme-color">
+    <meta content="#286577" name="msapplication-TileColor">
+    <meta content="#286577" name="msapplication-navbutton-color"/>
+    <!-- Meta de idioma -->
+    <link href="{{ url }}" hreflang="es" rel="alternate"/>
+
+    <!-- Social share -->
+    <meta content="{{ title_config }}" property="og:site_name"/>
+    <meta content="website" property="og:type"/>
+    <meta content="{{ locale }}" property="og:locale"/>
+    <meta content="https://www.facebook.com/lumenup" property="article:author"/>
+    <meta content="{{ url }}/img/social/social.jpg" property="og:image"/>
+    <meta content="{{ description }}" property="og:description"/>
+    <!-- Place favicon.ico in the root directory -->
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <meta content="{{ title_config }}" name="apple-mobile-web-app-title_config">
+    <link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <meta content="{{ title_config }}" name="application-name"/>
+    <link href="/manifest.json" rel="manifest">
+    <meta content="/ms-icon-144x144.png" name="msapplication-TileImage">
+
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/tablets.css" media="screen and (min-width:768px)" rel="stylesheet">
+    <link href="/css/desktop.css" media="screen and (min-width:992px)" rel="stylesheet">
+    <link href="/css/large.css" media="screen and (min-width:1200px)" rel="stylesheet">
+    {% block stylesheets %}
+    {% endblock %}
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.3.min.js"><\/script>')
+    </script>
+    <script src="/js/vendor/threesixty.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+    {% block scripts %}
+    {% endblock %}
+    <script>
+      var URLBase = "{{ app.request.getBaseURL() }}";
+    </script>
+  </head>
+  <body class="{{ app.request.attributes.get('_route') }}">
+    <!--[if lt IE 8]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+    <!-- Add your site or application content here -->
+
+    <header class="clearfix">
+      <div class="header__ham--menu">
+        <a class="js--show_menu">
+          <span></span>
+        </a>
+      </div>
+      <div class="header__menu">
+        <ul>
+          <li><a href="#quamtum__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#rgb__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#hdr__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#uhd__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#smarthub__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#oneremote__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#curved__target" class="trigger__link">Lorem</a></li>
+          <li><a href="#rotate__target" class="trigger__link no-padding">Lorem</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="global__wrap">
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <footer class="text-center">
+
+      <div class="footer__social">
+        <a href="">
+          <img src="/img/social/fb.png" alt="">
+        </a>
+        <a href="">
+          <img src="/img/social/ig.png" alt="">
+        </a>
+        <a href="">
+          <img src="/img/social/tw.png" alt="">
+        </a>
+        <a href="">
+          <img src="/img/social/yt.png" alt="">
+        </a>
+        <a href="">
+          <img src="/img/social/share.png" alt="">
+        </a>
+      </div>
+    </footer>
+
+  </body>
+</html>
